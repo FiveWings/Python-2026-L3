@@ -12,7 +12,7 @@ class Student:
         self.__student_id = student_id
         self.__dob = dob
 
-    # --- Getters (encapsulation) ---
+    # --- getters (encapsulation as required lul) ---
     @property
     def name(self):
         return self.__name
