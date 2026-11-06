@@ -47,7 +47,7 @@ u_color = input("What is your favorite color? ")
 
 if u_color in colors:
     index = colors.index(u_color)
-    print("Your color is at index 3 in my list")
+    print(f"Your color is at index {index} in my list")
 else:
     print("Sorry, I could not find your color")
 
@@ -71,14 +71,14 @@ print(*range4, sep=", ")
 # ex7.py
 def remove_dollar(s):
     return s.replace("$", "")
-price = "$1,500.00"
+price = input("Enter a price (e.g. $1,500.00): ")
 clean = remove_dollar(price)
 print(clean)
 
 # ex8.py
 def extract_even(l):
     return [x for x in l if x % 2 == 0]
-sample_list = [1, 4, 5, -1, 10]
+sample_list = [int(x) for x in input("Enter integers separated by spaces: ").split()]
 result = extract_even(sample_list)
 print(result)
 
@@ -91,11 +91,13 @@ def calculate_factorial(n):
     for i in range(1, n + 1):
         result *= i
     return result
+n = int(input("Enter a number to compute its factorial: "))
+print(f"{n}! = {calculate_factorial(n)}")
 
 # ex10.py
 def get_divisors(n):
     return [i for i in range(1, n + 1) if n % i == 0]
-number = 15
+number = int(input("Enter a number to find its divisors: "))
 divisors = get_divisors(number)
 print(divisors)
 
@@ -103,7 +105,11 @@ print(divisors)
 def calculate_distance(x1, y1, x2, y2):
     return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
-distance = calculate_distance(3, 4, 7, 7)
+x1 = float(input("Enter x1: "))
+y1 = float(input("Enter y1: "))
+x2 = float(input("Enter x2: "))
+y2 = float(input("Enter y2: "))
+distance = calculate_distance(x1, y1, x2, y2)
 print(f"The distance is: {distance}")
 
 # ex12.py
@@ -115,4 +121,6 @@ def print_pattern(m, n):
             else:
                 print(" ", end=" ")
         print()
-print_pattern(4, 5)
+m = int(input("Enter number of rows: "))
+n = int(input("Enter number of columns: "))
+print_pattern(m, n)
